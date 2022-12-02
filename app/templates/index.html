@@ -9,34 +9,39 @@
 
 <body>
     <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <h1>Crud com Python</h1>
+        <h1>Encontre o DogWalker ideal para seu pet!</h1>
     </div>
 
     <div class="col-8 m-auto pt-3 pb-2 text-center">
         <a href="/form" class="btn btn-success">Adicionar</a>
     </div>
 
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <form method="get">
+            <input type="text" id="search" name="search" class="form-control" placeholder="Buscar">
+        </form>
+
     <div class="col-8 m-auto pt-4 pb-2 text-center">
         <table class="table">
           <thead class="thead-dark">
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Modelo</th>
-              <th scope="col">Marca</th>
-              <th scope="col">Ano</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Data</th>
             </tr>
           </thead>
           <tbody>
           {% for dbs in db %}
           <tr>
               <th>{{dbs.id}}</th>
-              <td>{{dbs.modelo}}</td>
-              <td>{{dbs.marca}}</td>
-              <td>{{dbs.ano}}</td>
+              <td>{{dbs.nome}}</td>
+              <td>{{dbs.valor}}</td>
+              <td>{{dbs.data}}</td>
               <td>
                   <a href="view/{{dbs.id}}" class="btn-dark">Visualizar</a>
-                  <a href="" class="btn-primary">Editar</a>
-                  <a href="" class="btn-danger">Deletar</a>
+                  <a href="edit/{{dbs.id}}" class="btn-primary">Editar</a>
+                  <a href="delete/{{dbs.id}}" class="btn-danger btnDel">Deletar</a>
 
               </td>
             </tr>
@@ -45,5 +50,22 @@
           </tbody>
         </table>
     </div>
+
+    <!--<div class="pagination">
+        {% if db.has_previous %}
+            <a href="?page{{db.previous_page_number}}"> < </a>
+        {% endif %}
+
+        {%db.number}
+
+        {% if db.has_next %}
+            <a href="?page{{db.previous_page_number}}"> > </a>
+        {% endif %}
+
+    </div>-->
+
+    {% load static %}
+    <script src="{% static 'javascript.js' %}"></script>
+
 </body>
 </html>

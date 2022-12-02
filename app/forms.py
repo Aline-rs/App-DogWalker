@@ -6,4 +6,4 @@ from app.models import Person
 class PersonForm(ModelForm):
     class Meta:
         model = Person
-        fields = ['modelo', 'marca', 'ano']
+        fields = ['nome', 'valor', 'data']

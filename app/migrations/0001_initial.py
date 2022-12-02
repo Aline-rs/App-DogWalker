@@ -2,6 +2,8 @@
 
 from django.db import migrations, models
 
+from project import settings
+
 
 class Migration(migrations.Migration):
 
@@ -15,9 +17,9 @@ class Migration(migrations.Migration):
             name='Person',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('modelo', models.CharField(max_length=150)),
-                ('marca', models.CharField(max_length=100)),
-                ('ano', models.IntegerField()),
+                ('nome', models.CharField(max_length=150)),
+                ('valor', models.IntegerField(max_length=100)),
+                ('data', models.DateField(input_formats=settings.DATE_INPUT_FORMATS)),
             ],
         ),
     ]
