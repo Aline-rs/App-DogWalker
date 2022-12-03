@@ -18,8 +18,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=150)),
-                ('valor', models.IntegerField(max_length=100)),
-                ('data', models.DateField(input_formats=settings.DATE_INPUT_FORMATS)),
+                ('valor', models.CharField(max_length=100)),
+                ('data', models.IntegerField()),
             ],
         ),
     ]
