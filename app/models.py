@@ -6,5 +6,6 @@ from project import settings
 # Create your models here.
 class Person(models.Model):
     nome = models.CharField(max_length=150)
-    valor = models.CharField(max_length=100)
-    data = models.IntegerField()
+    valor = models.(max_length=100)
+    data = models.DateField()
+    hora = models.TimeField(null=True)
