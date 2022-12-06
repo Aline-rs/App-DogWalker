@@ -7,17 +7,18 @@ from django.core.paginator import Paginator
 # Create your views here.
 def home(request):
     data = {}
-    search = request.GET.get('search')
-    if search:
-        data['db'] = Person.objects.filter(modelo__iconstains=search)
-    else:
-        data['db'] = Person.objects.all()
     data['db'] = Person.objects.all()
-    # all['db'] = Person.objects.all()
-    # paginator = Paginator(all, 2)
-    # pages = request.GET.get('page')
-    # data['db'] = paginator.get_page(pages)
     return render(request, 'index.html', data)
+
+def cadastro(request):
+    data = {}
+    data['db'] = Person.objects.all()
+    return render(request, 'cadastrodog.html', data)
+
+def lista(request):
+    data = {}
+    data['lista'] = Person.objects.all()
+    return render(request, 'listadog.html', data)
 
 
 def form(request):
