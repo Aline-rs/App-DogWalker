@@ -6,8 +6,8 @@ from project import settings
 # Create your models here.
 class Person(models.Model):
     nome = models.CharField(max_length=150)
-    nomePet = models.CharField(max_length=150)
-    pet = models.CharField(max_length=150)
+    nomePet = models.CharField(max_length=150, null=True)
+    pet = models.CharField(max_length=150, null=True)
 
 
 class DogWalker(models.Model):
@@ -15,7 +15,7 @@ class DogWalker(models.Model):
     valor = models.IntegerField()
     data = models.DateField()
     hora = models.TimeField(null=True)
-    total = models.DecimalField()
+    total = models.DecimalField(max_digits=10, decimal_places=2)
 
 
 def save(self, *args, **kwargs):
