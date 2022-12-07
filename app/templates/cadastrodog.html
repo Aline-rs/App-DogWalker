@@ -21,11 +21,10 @@
         <form name="form" id="form" action="{% if db %}/update/{{db.id}}{%else%}/create/{% endif %}" method="post">
          {% csrf_token %}
         <!--{{form.as_p}}-->
-        <div class="form-group mt-4">Nome: {{lista.nome}}</div>
-        <div class="form-group mt-4">Valor da caminhada: {{lista.valor}}</div>
-        <div class="form-group mt-4">Data disponível: {{lista.data}}</div>
-        <div class="form-group mt-4">Hora da caminhada: {{lista.hora}}</div>
-        <div class="form-group mt-4">Total: {{lista.total}}</div>
+        <div class="form-group mt-4">Nome: {{cadastro.nome_dog}}</div>
+        <div class="form-group mt-4">Valor da caminhada: {{cadastro.valor}}</div>
+        <div class="form-group mt-4">Data disponível: {{cadastro.data}}</div>
+        <div class="form-group mt-4">Hora da caminhada: {{cadastro.hora}}</div>
             <input type="submit" class="btn btn-success" value="Salvar">
         </form>
     </div>

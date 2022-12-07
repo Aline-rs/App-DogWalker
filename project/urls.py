@@ -16,7 +16,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from app.views import home, form, create, view, edit, update, delete, cadastro, lista
+from app.views import home, form, create, view, edit, update, delete, cadastro, lista, createCadastro
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +25,7 @@ urlpatterns = [
     path('cadastro/', cadastro, name='cadastro'),
     path('lista/', lista, name='lista'),
     path('create/', create, name='create'),
+    path('createCadastro/', createCadastro, name='createCadastro'),
     path('view/<int:pk>', view, name='view'),
     path('edit/<int:pk>', edit, name='edit'),
     path('update/<int:pk>', update, name='update'),

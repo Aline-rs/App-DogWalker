@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from app.forms import PersonForm
-from app.models import Person
+from app.forms import PersonForm, DogForm
+from app.models import Person, DogWalker
 from django.core.paginator import Paginator
 
 
@@ -12,12 +12,12 @@ def home(request):
 
 def cadastro(request):
     data = {}
-    data['db'] = Person.objects.all()
+    data['cadastro'] = DogForm()
     return render(request, 'cadastrodog.html', data)
 
 def lista(request):
     data = {}
-    data['lista'] = Person.objects.all()
+    data['db'] = DogWalker.objects.all()
     return render(request, 'listadog.html', data)
 
 
@@ -31,6 +31,12 @@ def create(request):
     form = PersonForm(request.POST or None)
     if form.is_valid():
         form.save()
+        return redirect('home')
+
+def createCadastro(request):
+    cadastro = DogForm(request.POST)
+    if cadastro.is_valid():
+        cadastro.save()
         return redirect('home')
 
 

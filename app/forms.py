@@ -11,4 +11,4 @@ class PersonForm(ModelForm):
 class DogForm(ModelForm):
     class Meta:
         model = DogWalker
-        fields = ['nome', 'valor', 'data', 'hora', 'total']
+        fields = ['nome_dog', 'valor', 'data', 'hora', 'total']
