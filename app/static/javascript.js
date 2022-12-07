@@ -41,3 +41,9 @@
     form.addEventListener('submit', sendForm, false);
    }
 })(window, document);
+
+
+   function enviar() {
+      var numero = document.getElementById('numero').value;
+      document.getElementById('hora').innerHTML = numero;
+   }

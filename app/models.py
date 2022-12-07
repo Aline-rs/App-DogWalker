@@ -17,8 +17,7 @@ class DogWalker(models.Model):
     hora = models.TimeField(null=True)
     total = models.DecimalField(max_digits=10, decimal_places=2)
 
-    def save(self, *args, **kwargs):
+    def soma():
         self.total = (self.hora * self.valor)
         return super(DogWalker, self).save(*args, **kwargs)
-
 

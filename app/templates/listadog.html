@@ -30,7 +30,6 @@
               <th scope="col">Valor</th>
               <th scope="col">Data</th>
               <th scope="col">Hora</th>
-              <th scope="col">Hora</th>
             </tr>
           </thead>
           <tbody>
@@ -41,9 +40,8 @@
               <td>{{dbs.valor}}</td>
               <td>{{dbs.data}}</td>
               <td>{{dbs.hora}}</td>
-              <td>{{dbs.total}}</td>
               <td>
-                  <a href="view/{{dbs.id}}" class="btn-dark" style="padding:10px;border-radius:8px;">Contratar</a>
+                  <a href="/contratacao" class="btn-dark" style="padding:10px;border-radius:8px;">contratar</a>
               </td>
             </tr>
           {% endfor %}
@@ -64,9 +62,8 @@
         {% endif %}
 
     </div>-->
-
     {% load static %}
     <script src="{% static 'javascript.js' %}"></script>
 
-</body>
+ </body>
 </html>

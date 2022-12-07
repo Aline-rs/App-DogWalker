@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from app.forms import PersonForm, DogForm
 from app.models import Person, DogWalker
+from django.http import HttpResponse
 from django.core.paginator import Paginator
 
 
@@ -10,10 +11,16 @@ def home(request):
     data['db'] = Person.objects.all()
     return render(request, 'index.html', data)
 
-def cadastro(request):
+def contratacao(request):
     data = {}
-    data['cadastro'] = DogForm()
-    return render(request, 'cadastrodog.html', data)
+    data['db'] = DogWalker.objects.all()
+    return render(request, 'contratacao.html', data)
+
+def add(request):
+    num1 = int(request.GET["num1"])
+    res = num1 * 50
+    hora = num1
+    return render(request, 'result.html', {"result": res})
 
 def lista(request):
     data = {}
@@ -38,7 +45,6 @@ def createCadastro(request):
     if cadastro.is_valid():
         cadastro.save()
         return redirect('home')
-
 
 def view(request, pk):
     data = {}

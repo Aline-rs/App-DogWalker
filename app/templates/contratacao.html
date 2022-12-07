@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+</head>
+
+<body>
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Contratar Dog Walker</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <h3>DogWalker: Lucas</h3>
+        <h4>Valor: 50</h4>
+        <b>Selecione o numero de horas que o Dogwlaker deve passear com seu pet</b><br>
+        <div class="form-check form-check-inline">
+           <form action="/add">
+                <input type="text" id="hora" value="1" max="3" min="1" name="num1" style="width: 30px;text-align: center;">
+                <label class="form-check-label"  >horas</label>
+                <input type="submit" onclick="enviar()" value="confirmar">
+           </form>
+        </div>
+        <div>
+            <h4 id="valorTotal">Valor total: 50</h4>
+        </div>
+        <div class="col-8 m-auto pt-3 pb-2 text-center">
+            <a href="/lista" class="btn btn-info">Voltar</a>
+        </div>
+    </div>
+<!--    <input type="checkbox" id="Pacote_i" name="Pacote" value="Pacote i" onClick="soma()">-->
+<!--<input type="checkbox" id="Pacote_ii" name="Pacote" value="Pacote ii" onClick="soma()">-->
+<!--<input type="checkbox" id="Pacote_iii" name="Pacote" value="Pacote iii" onClick ="soma()">-->
+    {% load static %}
+    <script src="{% static 'javascript.js' %}"></script>
+    <script>
+        $("#hora").mask("9");
+    </script>
+</body>
+</html>
