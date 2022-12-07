@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>CRUD com Python</title>
+    <title>DOG WALKER</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
@@ -13,35 +13,29 @@
     </div>
 
     <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <h3>Escolha o melhor DogWalk pare o passeio do seu Pet</h3>
+        <h3>Escolha o melhor DogWalk para o passeio do seu pet!</h3>
     </div>
 
-    <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <form method="get">
-            <input type="text" id="search" name="search" class="form-control" placeholder="Buscar">
-        </form>
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
         <table class="table">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">#</th>
               <th scope="col">Nome</th>
               <th scope="col">Valor</th>
               <th scope="col">Data</th>
-              <th scope="col">Hora</th>
+              <th scope="col">Horário disponível </th>
             </tr>
           </thead>
           <tbody>
           {% for dbs in db %}
           <tr>
-              <th>{{dbs.id}}</th>
               <td>{{dbs.nome_dog}}</td>
               <td>{{dbs.valor}}</td>
               <td>{{dbs.data}}</td>
               <td>{{dbs.hora}}</td>
               <td>
-                  <a href="/contratacao" class="btn-dark" style="padding:10px;border-radius:8px;">contratar</a>
+                  <a href="/contratacao" class="btn-dark" style="padding:10px;border-radius:8px;">Contratar</a>
               </td>
             </tr>
           {% endfor %}

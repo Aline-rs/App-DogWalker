@@ -20,4 +20,3 @@ class DogWalker(models.Model):
     def soma():
         self.total = (self.hora * self.valor)
         return super(DogWalker, self).save(*args, **kwargs)
-
