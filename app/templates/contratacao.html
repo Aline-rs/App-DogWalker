@@ -4,37 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <title>DOG WALKER</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 </head>
 
 <body>
+    <header style="background-color: cadetblue;padding: 20px;color: white;font-weight: 600;font-size: 18px;">
+        <p style="margin: 0px;">DogWalk</p>
+    </header>
     <div class="col-8 m-auto pt-2 pb-2 text-center">
         <h1>Contratar Dog Walker</h1>
     </div>
 
-    <div class="col-8 m-auto pt-4 pb-2 text-center">
-        <h4>Valor da hora: R$50,00</h4>
-        <b>Informe o tempo que o DogWalker deve passear com seu pet:</b><br>
-        <div class="form-check form-check-inline">
-           <form action="/add">
-                <input type="text" id="hora" value="1" max="3" min="1" name="num1" style="width: 30px;text-align: center;">
-                <label class="form-check-label"  > hora(as)</label>
-                <input type="submit" onclick="enviar()" value="Confirmar">
-           </form>
+    <div class="col-8 m-auto pt-4 pb-2 text-center" style="background-color:rgb(240, 240, 240);border-radius: 8px;">
+        <div style="text-align: initial;">
+            <h4 style="margin: 5px;font-weight: 600;">Valor da hora: R$50,00</h4>
+            <b style="margin: 5px;font-weight: 600;">Informe o tempo que o DogWalker deve passear com seu pet:</b>
+        </div>
+        <div class="form-check form-check-inline" style="margin-top: 30px;">
+            <form action="/add">
+                <input type="text" id="hora" value="1" max="3" min="1" name="num1"
+                    style="width: 30px;text-align: center;">
+                <label class="form-check-label" style="font-size: 20px;"> hora(as)</label>
+                <input type="submit" onclick="enviar()" value="Confirmar" style="background-color: rgb(0, 145, 0);color: white;border: none;padding: 10px;border-radius: 5px;">
+            </form>
         </div>
         <div class="col-8 m-auto pt-3 pb-2 text-center">
             <a href="/lista" class="btn btn-info">Voltar</a>
         </div>
     </div>
-<!--    <input type="checkbox" id="Pacote_i" name="Pacote" value="Pacote i" onClick="soma()">-->
-<!--<input type="checkbox" id="Pacote_ii" name="Pacote" value="Pacote ii" onClick="soma()">-->
-<!--<input type="checkbox" id="Pacote_iii" name="Pacote" value="Pacote iii" onClick ="soma()">-->
+    <!--    <input type="checkbox" id="Pacote_i" name="Pacote" value="Pacote i" onClick="soma()">-->
+    <!--<input type="checkbox" id="Pacote_ii" name="Pacote" value="Pacote ii" onClick="soma()">-->
+    <!--<input type="checkbox" id="Pacote_iii" name="Pacote" value="Pacote iii" onClick ="soma()">-->
     {% load static %}
     <script src="{% static 'javascript.js' %}"></script>
     <script>
         $("#hora").mask("9");
     </script>
 </body>
+
 </html>

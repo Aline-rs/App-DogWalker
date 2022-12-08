@@ -8,6 +8,11 @@
 </head>
 
 <body>
+
+    <header style="background-color: cadetblue;padding: 20px;color: white;font-weight: 600;font-size: 18px;">
+        <p style="margin: 0px;">DogWalk</p>
+    </header>
+
     <div class="col-8 m-auto pt-2 pb-2 text-center">
         <h1>Meu perfil</h1>
     </div>
@@ -15,22 +20,23 @@
     <div class="col-8 m-auto pt-4 pb-2 text-center">
         <table class="table">
           <thead class="thead-dark">
-            <tr>
-              <th scope="col">Nome</th>
+            <tr style="background-color: rgb(56, 56, 56);color: white;">
+              <th style="border-radius: 8px 0 0 8px;" scope="col">Nome</th>
               <th scope="col">Nome Pet</th>
               <th scope="col">Pet</th>
+              <th style="border-radius: 0 8px 8px 0;" scope="col">Ações</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style="background-color: rgb(224, 224, 224); color: black;border-radius: 8px;">
           {% for dbs in db %}
           <tr>
-              <td>{{dbs.nome}}</td>
-              <td>{{dbs.nomePet}}</td>
-              <td>{{dbs.pet}}</td>
-              <td>
-                  <a href="view/{{dbs.id}}" class="btn-dark">Visualizar</a>
-                  <a href="edit/{{dbs.id}}" class="btn-primary">Editar</a>
-                  <a href="delete/{{dbs.id}}" class="btn-danger btnDel">Deletar</a>
+              <td style="border-bottom: solid 1px rgb(138, 138, 138);">{{dbs.nome}}</td>
+              <td style="border-bottom: solid 1px rgb(138, 138, 138);">{{dbs.nomePet}}</td>
+              <td style="border-bottom: solid 1px rgb(138, 138, 138);">{{dbs.pet}}</td>
+              <td style="border-bottom: solid 1px rgb(138, 138, 138);">
+                  <a href="view/{{dbs.id}}" class="btn-dark" style="padding: 5px;border-radius:5px;text-decoration:none;">Visualizar</a>
+                  <a href="edit/{{dbs.id}}" class="btn-primary" style="padding: 5px;border-radius:5px;text-decoration:none;">Editar</a>
+                  <a href="delete/{{dbs.id}}" class="btn-danger btnDel" style="padding: 5px;border-radius:5px;text-decoration:none;">Deletar</a>
 
               </td>
             </tr>
@@ -38,12 +44,12 @@
 
           </tbody>
         </table>
-        <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <a href="/form" class="btn btn-success">Cadastrar</a>
+    
     </div>
 
-    <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <a href="/lista" class="btn btn-success">Contratar DogWalker</a>
+    <div class="col-8 m-auto pt-3 pb-2 text-center" style="display: flex;">
+        <a href="/lista" class="btn btn-success" style="margin: 5px;">Contratar DogWalker</a>
+        <a href="/form" class="btn btn-success" style="margin: 5px;">Cadastrar</a>
     </div>
     </div>
 

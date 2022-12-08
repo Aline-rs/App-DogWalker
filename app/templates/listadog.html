@@ -8,6 +8,11 @@
 </head>
 
 <body>
+
+    <header style="background-color: cadetblue;padding: 20px;color: white;font-weight: 600;font-size: 18px;">
+        <p style="margin: 0px;">DogWalk</p>
+    </header>
+
     <div class="col-8 m-auto pt-2 pb-2 text-center">
         <h1>Lista de dog walker</h1>
     </div>
@@ -20,21 +25,22 @@
     <div class="col-8 m-auto pt-4 pb-2 text-center">
         <table class="table">
           <thead class="thead-dark">
-            <tr>
-              <th scope="col">Nome</th>
+            <tr style="background-color: rgb(56, 56, 56);color: white;border: none;">
+              <th style="border-radius: 8px 0 0 8px;" scope="col">Nome</th>
               <th scope="col">Valor</th>
               <th scope="col">Data</th>
               <th scope="col">Horário disponível </th>
+              <th style="border-radius: 0 8px 8px 0;" scope="col">Contrate </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style="background-color: rgb(224, 224, 224); color: black;border-radius: 8px;">
           {% for dbs in db %}
           <tr>
-              <td>{{dbs.nome_dog}}</td>
-              <td>{{dbs.valor}}</td>
-              <td>{{dbs.data}}</td>
-              <td>{{dbs.hora}}</td>
-              <td>
+              <td style="border-bottom: solid 1px rgb(138, 138, 138);">{{dbs.nome_dog}}</td>
+              <td style="border-bottom: solid 1px rgb(138, 138, 138);">{{dbs.valor}}</td>
+              <td style="border-bottom: solid 1px rgb(138, 138, 138);">{{dbs.data}}</td>
+              <td style="border-bottom: solid 1px rgb(138, 138, 138);">{{dbs.hora}}</td>
+              <td style="border-bottom: solid 1px rgb(138, 138, 138);">
                   <a href="/contratacao" class="btn-dark" style="padding:10px;border-radius:8px;">Contratar</a>
               </td>
             </tr>
@@ -42,6 +48,7 @@
 
           </tbody>
         </table>
+        <a href="/" class="btn btn-info">Voltar</a>
     </div>
 
     <!--<div class="pagination">
